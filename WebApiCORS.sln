@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{B16F6A48-0D9F-4E87-B1FC-C5C7ABE9434B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{22241EAF-27EB-4BCD-8490-0BF57DB447D4}"
 EndProject
 Global
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B16F6A48-0D9F-4E87-B1FC-C5C7ABE9434B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B16F6A48-0D9F-4E87-B1FC-C5C7ABE9434B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B16F6A48-0D9F-4E87-B1FC-C5C7ABE9434B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B16F6A48-0D9F-4E87-B1FC-C5C7ABE9434B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{22241EAF-27EB-4BCD-8490-0BF57DB447D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{22241EAF-27EB-4BCD-8490-0BF57DB447D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22241EAF-27EB-4BCD-8490-0BF57DB447D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
