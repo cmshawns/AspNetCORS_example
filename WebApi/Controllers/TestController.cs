@@ -7,7 +7,7 @@
     //[EnableCors(origins: "http://localhost:3017", headers:"*", methods:"*")]
     public class TestController : ApiController
     {
-        [EnableCors(origins: "http://localhost:3017", headers: "*", methods: "GET")]
+        //[EnableCors(origins: "http://localhost:3017", headers: "*", methods: "GET")]
         public HttpResponseMessage Get()
         {
             return new HttpResponseMessage()
