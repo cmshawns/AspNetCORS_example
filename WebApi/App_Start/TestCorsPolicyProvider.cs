@@ -1,10 +1,12 @@
 ﻿namespace WebApi
 {
     using System;
+    using System.IO;
     using System.Net.Http;
     using System.Threading;
     using System.Threading.Tasks;
     using System.Web.Cors;
+    using System.Web.Hosting;
     using System.Web.Http.Cors;
 
     public class TestCorsPolicyProvider : Attribute, ICorsPolicyProvider
@@ -17,19 +19,26 @@
             _policy = new CorsPolicy
             {
                 AllowAnyHeader = true,
+                AllowAnyMethod = true,
             };
         }
 
         Task<CorsPolicy> ICorsPolicyProvider.GetCorsPolicyAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            _policy.Methods.Clear();
-            _policy.Methods.Add("get");
-            _policy.Methods.Add("post");
-            _policy.Methods.Add("put");
+            string root = HostingEnvironment.ApplicationPhysicalPath;
+            string filename = Path.Combine(root, "origins.txt");
 
-            _policy.Origins.Clear();
-            _policy.Origins.Add("http://localhost:3017");
+            string origins = File.ReadAllText(filename);
 
+            if (!string.IsNullOrWhiteSpace(origins))
+            {
+                _policy.Origins.Clear();
+
+                foreach (string origin in origins.Split(','))
+                {
+                    _policy.Origins.Add(origin);
+                }
+            }
             return Task.FromResult(_policy);
         }
     }
